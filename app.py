@@ -12,7 +12,7 @@ import tempfile
 app = Flask(__name__, template_folder='views')
 
 # Set the app secret key from the secret environment variables.
-app.secret = os.environ.get('SECRET')
+#app.secret = os.environ.get('SECRET')
 
 
 def telegraph(filename):
@@ -66,32 +66,30 @@ def payment(id):
         """Displays the QR and Payment Info."""
         qr = create_qr(id)
         if qr:
-            return render_template('home.html',id=id,qr=create_qr(id))
+            return render_template('home.html', id=id, qr=create_qr(id))
         else:
             return "Something went wrong!"
     else:
         return render_template("create.html")
     
 
-@app.route('/')
-def homepage():
-    return render_template('create.html')
+
 
 @app.route('/<id>/<amount>')
-def amount_payment(id,amount):
+def amount_payment(id, amount):
     if '@' in id:
         """Displays the QR and Payment Info."""
-        qr = create_qr(id,amount)
+        qr = create_qr(id, amount)
         try:
-            amount = round(float(amount),2)
+            amount = round(float(amount), 2)
         except Exception:
             amount = None
         if qr:
-            return render_template('home.html',id=id,qr=create_qr(id,amount),amount=amount)
+            return render_template('home.html', id=id, qr=create_qr(id, amount), amount=amount)
         else:
             return "Something went wrong!"
     else:
         return render_template("create.html")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000,use_reloader=True)
+    app.run(debug=True)
