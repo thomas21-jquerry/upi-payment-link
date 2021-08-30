@@ -59,6 +59,9 @@ def create_qr(id,amount=None):
     )
     link = telegraph(save_dir+"/"+id+"_qr.png")
     return link
+@app.route('/')
+def landing():
+    return "There is no upi id for payment"
 
 @app.route('/<id>')
 def payment(id):
