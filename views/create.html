@@ -43,7 +43,7 @@
                     <span class="tooltiptext" id="myTooltip">Create and Copy Link</span>
                 </button>
                 <br><br>
-                <a href="https://upi-payment-link-fruit.herokuapp.com/thomasjose875@oksbi">
+                <a href="https://upi-payment-link.herokuapp.com/thomasjose875@oksbi">
                     <button>    
                         <span>Donate</span>
                     </button>
@@ -69,7 +69,7 @@
                 if (isNumeric(amountid.value)) {
                     amount = "/" + amountid.value;
                 }
-                upilink.value = "https://upayi.ml/" + upiid.value + amount;
+                upilink.value = "https://upi-payment-link.herokuapp.com/" + upiid.value + amount;
                 upilink.style.display = "block";
                 navigator.clipboard.writeText(upilink.value);
                 var copyText = document.getElementById("upilink");
