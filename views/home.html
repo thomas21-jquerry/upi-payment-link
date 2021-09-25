@@ -2,12 +2,7 @@
 <html lang="en">
 
 <head>
-
-
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Meta Tags -->
 
     <meta name="description" content="pay with your UPI ID!">
     <link rel="icon" href="https://telegra.ph/file/2f094c81af60c83f28f84.png" type="image/png" />
@@ -51,18 +46,19 @@
         <div class="actions">
             <div class="pay-btn">
                 {% if amount %}
-                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR&am={{ amount }}"> <button>Pay Now</button></a>
+                <a href="upi://pay?pn=UPI-Payment-link&pa={{ id }}&cu=INR&am={{ amount }}"> <button>Pay Now</button></a>
                 {% else %}
-                <a href="upi://pay?pn=UPAYI&pa={{ id }}&cu=INR"> <button>Pay Now</button></a>
+                <a href="upi://pay?pn=UPI-Payment-link&pa={{ id }}&cu=INR"> <button>Pay Now</button></a>
                 {% endif %}
                 <br><br>
 
             </div>
         </div>
 
-<!--        <div class="desc link"> <a href="https://github.com/cyberboysumanjay">Made with <span class="love">❤️</span> </a></div>-->
+<!--        <div class="desc link">Made with <span class="love">❤️</span> </a></div>-->
 
     </div>
+    <h3>If upi payment didnt pop up after clicking paynow then install a upi payment option and try again or scan the qr code using upi apps .</h3>
 
 </body>
 

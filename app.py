@@ -61,7 +61,7 @@ def create_qr(id,amount=None):
     return link
 @app.route('/')
 def landing():
-    return "There is no upi id for payment"
+    return render_template("create.html")
 
 @app.route('/<id>')
 def payment(id):
